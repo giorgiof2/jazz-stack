@@ -13,7 +13,7 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./app/*"]
+      "~/*": ["app.ol/*"]
     },
     "skipLibCheck": true,
 
