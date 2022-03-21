@@ -53,6 +53,7 @@ async function main({ rootDirectory }) {
     DIR_NAME,
     SUFFIX,
     APP_NAME,
+    newEnv
   })
 
   console.log(`✅  Project is ready! Start development with "npm run dev"`)
