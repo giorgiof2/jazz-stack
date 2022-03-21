@@ -10,6 +10,7 @@ npx create-remix --template giorgiof2/jazz-stack
 
 ## What's in the stack
 
+- Visual Editing with [Reactbricks](https://reactbricks.com/)
 - Styling with [Tailwind](https://tailwindcss.com/)
 - Code formatting with [Prettier](https://prettier.io)
 - Linting with [ESLint](https://eslint.org)

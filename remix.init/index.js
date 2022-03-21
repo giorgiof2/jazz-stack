@@ -1,4 +1,3 @@
-const { execSync } = require('child_process')
 const crypto = require('crypto')
 const fs = require('fs/promises')
 const path = require('path')
@@ -32,7 +31,9 @@ async function main({ rootDirectory }) {
     fs.readFile(PACKAGE_JSON_PATH, 'utf-8'),
   ])
 
-  const newEnv = env.replace(/^SESSION_SECRET=.*$/m, `SESSION_SECRET="${getRandomString(16)}"`)
+  const newEnv = env.replace(/^SESSION_SECRET=.*$/m, `SECRET_SESSION="${getRandomString(16)}"`)
+
+  console.log(newEnv)
 
   const newReadme = readme.replace(new RegExp(escapeRegExp(REPLACER), 'g'), APP_NAME)
 
@@ -43,6 +44,16 @@ async function main({ rootDirectory }) {
     fs.writeFile(ENV_PATH, newEnv),
     fs.writeFile(PACKAGE_JSON_PATH, newPackageJson),
   ])
+  console.log('🚀 ~ file: index.js ~ line 18 ~ main ~ README_PATH', {
+    README_PATH,
+    EXAMPLE_ENV_PATH,
+    ENV_PATH,
+    PACKAGE_JSON_PATH,
+    REPLACER,
+    DIR_NAME,
+    SUFFIX,
+    APP_NAME,
+  })
 
   console.log(`✅  Project is ready! Start development with "npm run dev"`)
 }
